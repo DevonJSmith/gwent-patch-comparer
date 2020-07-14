@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CardSearch from './Card-Search/CardSearch';
 import CardDisplay from './Card-Display/CardDisplay';
 
-const intialState = {cardData: null};
+const intialState = {cardDataBase: null, cardDataOther: null};
 
 export default class CardViewer extends Component {
     constructor(props) {
@@ -12,8 +12,8 @@ export default class CardViewer extends Component {
         this.state = intialState;
     }
 
-    handleCardChange(newCardData) {
-        this.setState({cardData: newCardData});
+    handleCardChange(newCardDataA, newCardDataB) {
+        this.setState({cardDataBase: newCardDataA, cardDataOther: newCardDataB});
     }
 
     render() {
@@ -23,8 +23,10 @@ export default class CardViewer extends Component {
                     onCardSelect={this.handleCardChange}
                 />
                 <CardDisplay
-                    cardData={this.state.cardData}
+                    cardData={this.state.cardDataBase}
                 />
+                <CardDisplay
+                    cardData={this.state.cardDataOther}/>
            </div>
         );
     }

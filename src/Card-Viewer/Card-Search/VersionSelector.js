@@ -15,9 +15,9 @@ export default class VersionSelector extends Component {
                  text: 'v6.1.3'
              },
              {
-                 key: '5.1.0',
-                 value: '5.1.0',
-                 text: 'v5.1.0'
+                 key: '7.0.1',
+                 value: '7.0.1',
+                 text: 'v7.0.1'
              }
          ];
 
@@ -32,7 +32,6 @@ export default class VersionSelector extends Component {
     render() {
         return (
             <Dropdown
-                inline
                 options= {this.state.options}
                 defaultValue={this.state.options[0].value}
                 onChange={this.handleChange}

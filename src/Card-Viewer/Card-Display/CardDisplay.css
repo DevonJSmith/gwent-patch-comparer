@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'Gwent';
+    src: url('../../data/hinted-GWENT-ExtraBold.ttf');
+}
+
+.displayContainer {
+    margin: 0 -15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cardContainer {
+    position: relative;
+    width: 350px;
+    height: 529px;
+    margin: 0 15px;
+}
+
+.descriptionContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 15pxn;
+    max-width: 450px;
+    white-space: pre-wrap;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.descriptionInnerContainer {
+    margin: 1.6%;
+}
+
+.headerTextContainer {
+    color: white;
+    text-align: center;
+}
+
+.descriptionBodyContainer {
+    padding: 15px 20px 0 20px;
+    font-size: 1.3em;
+    line-height: 1.3;
+}
+
+.titleText {
+    font-family: 'Gwent';
+    font-size: 3em;
+    padding: 15px 0 10px 0;
+}
+
+.categoryText {
+    font-size: 1.7em;
+    padding: 10px 0 10px 0;
+}
+
+.cardElement {
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.cardBanner {
+    width: 33%;
+    height: 30%;
+    text-align: center;
+    color: beige;
+    -webkit-text-fill-color: beige; 
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-family: 'Gwent';
+    font-size: 5em;
+    line-height: 1.6;
+}
+
+.cardProvisions {
+    width: 25%;
+    height: 25%;
+    top: 78%;
+    left: 72.5%;
+    color: gold;
+    -webkit-text-fill-color: gold; 
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-align: center;
+    font-family: 'Gwent';
+    font-size: 6.0em;
+    line-height: 1.3;
+}
+
+.provisionIcon {
+    width: 23.5%;
+    height: 20%;
+    left: 73.5%;
+    top: 63.2%
+}
+
+.strategemIcon {
+    width: 20%;
+    height: 20%;
+    left: 7%;
+    top: 5%;
+}
+
+.artifactIcon {
+    width: 15%;
+    height: 15%;
+    top: 4.5%;
+    left: 8.8%;
+}
+
+.specialIcon {
+    width: 20%;
+    height: 20%;
+    top: 3%;
+    left: 6.3%;
+}
+
+.armorIcon {
+    width: 25%;
+    height: 25%;
+    left: 73.5%;
+    top: 0.5%;
+    color: black;
+    -webkit-text-fill-color: white; 
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-family: 'Gwent';
+    text-align: center;
+    font-size: 6em;
+    line-height: 1.2;
+}
+
+.rarityIcon {
+    width: 9%;
+    height: 9%;
+    top: 2.5%;
+    left: 3.8%;
+}
+
+.cardArt {
+    border-radius: 10px;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.flavorText {
+    font-style: italic;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4)
+}
+
+.dividerContainer {
+    width: 100%;
+    text-align: center;
+}
+
+.divider {
+    width: 80%;
+    height: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.keywordText {
+    color: darkred;
+    font-weight: bold;
+}
+

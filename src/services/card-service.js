@@ -37,7 +37,8 @@ export default class CardService {
                     armor: val.armor,
                     type: val.type,
                     artist: val.artist,
-                    artId: val.variations[key +'00'].art.ingameArtId
+                    artId: val.variations[key +'00'].art.ingameArtId,
+                    rarity: val.variations[key + '00'].rarity
                 }
             ))
             .values().next().value;
