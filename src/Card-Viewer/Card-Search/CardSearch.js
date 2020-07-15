@@ -5,7 +5,7 @@ import VersionSelector from './VersionSelector';
 import './CardSearch.css'
 var _ = require('lodash');
 
-const intialState = {isLoading: false, results: [], value: '', versionA: '6.1.3', versionB: '6.1.3'};
+const intialState = {isLoading: false, results: [], value: '', versionA: '6.1.3', versionB: '6.1.3', cardId: null};
 
 export default class CardSearch extends Component {
     constructor(props) {
@@ -19,10 +19,24 @@ export default class CardSearch extends Component {
 
     handleVersionAChange (version) {
         this.setState({versionA: version});
+
+        // if cardMetadataA is set, reload with the selected version
+        if(this.state.cardId) {
+            let cardMetaDataA = CardService.retrieveCardData(this.state.cardId, version);
+            let cardMetaDataB = CardService.retrieveCardData(this.state.cardId, this.state.versionB);
+            this.props.onCardSelect(cardMetaDataA, cardMetaDataB);
+        }
     }
 
     handleVersionBChange(version){
         this.setState({versionB: version});
+
+        // if cardMetadataA is set, reload with the selected version
+        if(this.state.cardId) {
+            let cardMetaDataA = CardService.retrieveCardData(this.state.cardId, this.state.versionA);
+            let cardMetaDataB = CardService.retrieveCardData(this.state.cardId, version);
+            this.props.onCardSelect(cardMetaDataA, cardMetaDataB);
+        }
     }
 
     handleSearchChange (e, { value }) {
@@ -32,7 +46,7 @@ export default class CardSearch extends Component {
         if (value.length < 1) {
             // get the current values of the version dropdowns
 
-            this.setState({isLoading: false, result:[], value: ''});
+            this.setState({isLoading: false, result:[], value: '', cardId: null});
         }
 
         // use the higher version when searching for cards
@@ -48,7 +62,7 @@ export default class CardSearch extends Component {
 
     handleResultSelect (e, { result }) {
         // update the current value
-        this.setState({value: result.title, results: [result]});
+        this.setState({value: result.title, results: [result], cardId: result.id});
 
         var cardMetaDataA = CardService.retrieveCardData(result.id, this.state.versionA);
         var cardMetaDataB = CardService.retrieveCardData(result.id, this.state.versionB);
@@ -67,13 +81,16 @@ export default class CardSearch extends Component {
                     onResultSelect={this.handleResultSelect}
                     results= {results}
                     value={value}
+                    size={"big"}
                 />
-                <VersionSelector
-                    onVersionChange={this.handleVersionAChange}
-                />
-                <VersionSelector
-                    onVersionChange={this.handleVersionBChange}
-                />
+                <div class='VersionSelectorContainer'>
+                    <VersionSelector
+                        onVersionChange={this.handleVersionAChange}
+                    />
+                    <VersionSelector
+                        onVersionChange={this.handleVersionBChange}
+                    />
+                </div>
             </div>
         );
     }

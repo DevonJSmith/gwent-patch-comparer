@@ -1,5 +1,9 @@
 .SearchContainer {
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.VersionSelectorsContainer {
+    display: flex;
 }

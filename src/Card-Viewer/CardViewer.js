@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardSearch from './Card-Search/CardSearch';
 import CardDisplay from './Card-Display/CardDisplay';
+import './CardViewer.css';
 
 const intialState = {cardDataBase: null, cardDataOther: null};
 
@@ -22,11 +23,13 @@ export default class CardViewer extends Component {
                 <CardSearch
                     onCardSelect={this.handleCardChange}
                 />
-                <CardDisplay
-                    cardData={this.state.cardDataBase}
-                />
-                <CardDisplay
-                    cardData={this.state.cardDataOther}/>
+                <div class="cardCompareContainer">
+                    <CardDisplay
+                        cardData={this.state.cardDataBase}
+                    />
+                    <CardDisplay
+                        cardData={this.state.cardDataOther}/>
+                </div>
            </div>
         );
     }
