@@ -34,6 +34,7 @@ export default class VersionSelector extends Component {
             <Dropdown
                 options= {this.state.options}
                 defaultValue={this.state.options[0].value}
+                selection
                 onChange={this.handleChange}
             />
         );

@@ -4,6 +4,8 @@
     flex-direction: column;
 }
 
-.VersionSelectorsContainer {
+.VersionSelectorContainer {
+    width: 100%;
     display: flex;
+    justify-content: space-around;
 }
